@@ -16,6 +16,9 @@
             // comes back to the browser, they see the content they expect.
             $('body').append('<iframe class="twitter-detect" src="twitter://" />')
               .append('<iframe class="twitter-detect" src="itms-apps://itunes.com/apps/twitter" />');
+          } else if (typeof MobileEsp.DetectAndroid !== 'undefined' && MobileEsp.DetectAndroid()) {
+            $('body').append('<iframe class="twitter-detect" src="twitter://" />')
+              .append('<iframe class="twitter-detect" src="itms-apps://itunes.com/apps/twitter" />');
           }
         });
       });
