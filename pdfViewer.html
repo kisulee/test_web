@@ -4,11 +4,22 @@
 <head>
     <title>PDF Viewer</title>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="Scripts2/pdf.mjs" type="module" defer></script>
 </head>
 
 <body> <canvas id="pdfCanvas"></canvas>
     <script> var url = 'https://test.1qbank.com:18443/lounge/london/et/common/download/Terms%20and%20Conditions_.pdf'; // PDF URL 
-        pdfjsLib.getDocument(url).promise.then(function (pdf) { pdf.getPage(1).then(function (page) { var canvas = document.getElementById('pdfCanvas'); var context = canvas.getContext('2d'); var viewport = page.getViewport({ scale: 1.5 }); canvas.height = viewport.height; canvas.width = viewport.width; page.render({ canvasContext: context, viewport: viewport }); }); }); </script>
+        pdfjsLib.getDocument(url).promise.then(function (pdf) { 
+            pdf.getPage(1).then(function (page) { 
+                var canvas = document.getElementById('pdfCanvas'); 
+                var context = canvas.getContext('2d'); 
+                var viewport = page.getViewport({ scale: 1.5 }); 
+                canvas.height = viewport.height; 
+                canvas.width = viewport.width;
+                page.render({ canvasContext: context, viewport: viewport }); 
+                }); 
+                }); 
+                </script>
 </body>
 
 </html>
